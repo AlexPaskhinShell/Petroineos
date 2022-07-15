@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup Condition="'$(DisableImplicitFrameworkReferences)' != 'true' And '$(TargetFrameworkIdentifier)' == '.NETCoreApp' And '$(_TargetFrameworkVersionWithoutV)' &gt;= '3.0'">
+		<FrameworkReference Include="Microsoft.AspNetCore.App" IsImplicitlyDefined="true" />
+	</ItemGroup>
+
+	<ItemGroup>
+	<ProjectReference Include="..\IntraDayService.Lib\IntraDayService.Lib.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="CVS_Stroge\" />
+	</ItemGroup>
+</Project>
